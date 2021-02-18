@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.parameter;
 import static io.qameta.allure.Allure.step;
 
 public class AllureStepsAdd {
@@ -18,13 +19,15 @@ public class AllureStepsAdd {
             REPOSITORY = "/qaguru_4.3";
 
     @Test
-    @Link(BASEURL + OWNER + REPOSITORY)
+    @Link(name = "Base URL", value = BASEURL + OWNER + REPOSITORY)
     @Tags({@Tag("web"), @Tag("critical")})
     @Feature("Contributors")
     @Story("Поиск авторов в репозитории")
     @Owner(OWNER)
     @DisplayName("Поиск репозитория " + REPOSITORY + " у автора " +OWNER)
     void AllureBaseSteps() {
+        parameter("Author", OWNER);
+        parameter("Repository", REPOSITORY);
         step("Открываем Гитхаб", ()-> {
             open(BASEURL);
         });
