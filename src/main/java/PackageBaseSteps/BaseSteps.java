@@ -1,4 +1,4 @@
-package io.qaguru.eroshenkoam;
+package PackageBaseSteps;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 

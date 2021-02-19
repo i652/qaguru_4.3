@@ -1,4 +1,4 @@
-import io.qaguru.eroshenkoam.BaseSteps;
+import PackageBaseSteps.BaseSteps;
 import org.junit.jupiter.api.Test;
 
 public class MethodStepTest {
