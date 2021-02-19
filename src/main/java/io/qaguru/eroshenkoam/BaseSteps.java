@@ -9,23 +9,25 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class BaseSteps {
     private static final String
-            BASEURL = "https://github.com/";
+            BASEURL = "https://github.com/",
+            OWNER = "i652",
+            REPOSITORY = "/qaguru_4.3";
 
     @Step("Открываем главную страницу")
     public void openMainPage() {
         open(BASEURL);
     }
 
-    @Step("Ищем репозиторий {repository}")
-    public void searchRepo(final String author, final String repository) {
+    @Step("Ищем репозиторий " + REPOSITORY)
+    public void searchRepo() {
         $(".header-search-input").click();
-        $(".header-search-input").sendKeys(author + repository);
+        $(".header-search-input").sendKeys(OWNER + REPOSITORY);
         $(".header-search-input").submit();
     }
 
     @Step("Переходим в репозиторий {repository}")
-    public void goToRepo(final String author, final String repository) {
-        $(byLinkText(author + repository)).click();
+    public void goToRepo() {
+        $(byLinkText(OWNER + REPOSITORY)).click();
     }
 
     @Step("Переходим в раздел Insights")
@@ -39,7 +41,7 @@ public class BaseSteps {
     }
 
     @Step("Убеждаемся, что автор {author}")
-    public void authorShouldBe(final String author) {
-        $(withText(author)).should(Condition.exist);
+    public void authorShouldBe() {
+        $(withText(OWNER)).should(Condition.exist);
     }
 }
