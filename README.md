@@ -6,7 +6,7 @@ Method Test https://github.com/i652/qaguru_4.3/blob/main/src/test/java/MethodSte
 
 LambdaTest https://github.com/i652/qaguru_4.3/blob/main/src/test/java/LambdaStepTest.java
 
-//
+//не относящееся к ДЗ
 
 Расширенный тест https://github.com/i652/qaguru_4.3/blob/main/src/test/java/AllureStepsAdd.java
 
